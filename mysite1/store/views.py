@@ -17,6 +17,27 @@ from .forms import CreateNewCart
 # Rendering the html pages for the store
 def index(response, id):  
     ls = ShoppingCart.objects.get(id=id)
+
+    #{"save":["save"], "c1":["clicked"]}
+    if response.method == "POST":
+        print(response.POST)
+        if response.POST.get("save"):
+            for item in ls.item_set.all():
+                if response.POST.get("c" + str(item.id)) == "clicked":
+                    item.complete = True
+                else: 
+                    item.complete = False
+
+                item.save()
+                
+        elif response.POST.get("newItem"):
+            txt= response.POST.get("new")
+
+            if len(txt) > 2:
+                ls.item_set.create(text=txt, complete=False)
+            else:
+                print("invalid")
+
     return render(response, "store/cart.html", {"ls":ls})
 
 def home(response): 
