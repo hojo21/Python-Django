@@ -1,0 +1,21 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Create New Cart{% endblock %}
+
+{% block content %}
+    <h3>Create Customer</h3>
+	<br>
+    <form method="post", action="/create/" class="form-group">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit", name="save", class="btn btn-success">Add Items</button>
+    </form>
+    <form action="http://127.0.0.1:8000">
+        {% csrf_token %}
+        <input type="submit" value="Home"/>
+    </form>
+    <form action="http://127.0.0.1:8000/admin">
+        {% csrf_token %}
+        <input type="submit" value="Admin"/>
+    </form>
+{% endblock %}

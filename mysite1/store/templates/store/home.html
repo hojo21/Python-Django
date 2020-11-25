@@ -1,0 +1,15 @@
+{% extends 'store/base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<h1>Python Django Store Front Page</h1>
+<form action="http://127.0.0.1:8000/create">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Go to Create Customer"/>
+</form>
+
+{% endblock %}
