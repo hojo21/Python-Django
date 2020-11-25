@@ -20,6 +20,6 @@ urlpatterns = [
     #path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('', include("store.urls")),
-    #path("cart/", views.cart, name="")
-    
+    # path("cart/", views.cart, name="")
+
 ]
