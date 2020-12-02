@@ -6,6 +6,11 @@ from .forms import CreateNewCart
 
 # Create your views here.
 
+# this is where the different "views" or pages are created using Python
+# on this page, views are created for each page using POST to send and receive customer data
+# the html pages found in the templates folder are also tied to the pages in this file
+
+# these views are commented out but are still here because I used them as reference to create the other views
 # def index(response, id): 
 #     return HttpResponse("<h1>store front page</h1><h1>%s</h1>" % id)
 
@@ -14,7 +19,7 @@ from .forms import CreateNewCart
 #     ls = ShoppingCart.objects.get(id=id)
 #     return HttpResponse("<h1>Dynmaic store page for: %s</h1>" %ls.id)
 
-# Rendering the html pages for the store
+# Rendering the html pages and POST requests for the store
 def index(response, id):  
     ls = ShoppingCart.objects.get(id=id)
 
@@ -46,6 +51,7 @@ def home(response):
 def cart(response): 
     return render(response, "store/cart.html", {})
 
+# this view gets, stores, and saves the customer data into the back-end database
 def create(response):
     if response.method == "POST":
         form = CreateNewCart(response.POST)

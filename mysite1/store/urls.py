@@ -2,6 +2,7 @@ from django.urls import path
 
 from . import views
 
+# these are the different paths for the url in order to navigate to the different pages
 urlpatterns = [
     # path("", views.index, name="index"),
     

@@ -4,7 +4,8 @@
 
 {% block content %}
     <h3>Create Customer</h3>
-	<br>
+    <br>
+    <!-- this connects the form that is created on forms.py where the customer data is stored and processed -->
     <form method="post", action="/create/" class="form-group">
         {% csrf_token %}
         {{form.as_p}}
