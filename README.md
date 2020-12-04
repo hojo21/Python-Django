@@ -15,3 +15,7 @@ The files I did most of my writing/coding on were inside of the "store" director
 Sample input/output:
 This information should be able to be found on the admin page. Sample Shopping cart or Customer data: Customer1, Customer 2. Sample Items or purchased item data: Sweatshirt, T-Shirt. 
 
+Github Repository: 
+https://github.com/hojo21/Python-Django.git
+
+
